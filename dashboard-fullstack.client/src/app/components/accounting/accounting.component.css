@@ -1,0 +1,6 @@
+.panel {
+  min-height: 380px;
+  box-shadow: 20px, 20px, 80px, black;
+  border-radius: 10px;
+  margin-top: 20px;
+}

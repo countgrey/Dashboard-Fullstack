@@ -4,12 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorizationComponent } from './authorization/authorization.component';
+import { LoginComponent } from './components/login/login.component';
+import { AccountingComponent } from './components/accounting/accounting.component';
+import { TimetableComponent } from './components/timetable/timetable.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorizationComponent
+    LoginComponent,
+    AccountingComponent,
+    TimetableComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
