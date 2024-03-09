@@ -1,1 +1,8 @@
-<p>dashboard works!</p>
+<app-header></app-header>
+
+<div class="container-fluid">
+  <div class="row">
+    <app-widget *ngFor="let element of positions; let i = index"
+                class="{{ positions[i] }}" />
+  </div>
+</div>
