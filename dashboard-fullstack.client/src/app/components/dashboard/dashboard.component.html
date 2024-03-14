@@ -1,8 +1,8 @@
 <app-header></app-header>
 
 <div class="container-fluid">
-  <div class="row">
-    <app-widget *ngFor="let element of positions; let i = index"
-                class="{{ positions[i] }}" />
+  <div class="row me-0">
+    <app-widget *ngFor="let position of positions"
+                class="{{ position }} p-1" />
   </div>
 </div>

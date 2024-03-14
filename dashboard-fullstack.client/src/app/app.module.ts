@@ -10,6 +10,7 @@ import { TimetableComponent } from './components/timetable/timetable.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WidgetComponent } from './components/dashboard/widget/widget.component';
+import { ElementComponent } from './components/dashboard/widget/element/element.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WidgetComponent } from './components/dashboard/widget/widget.component'
     TimetableComponent,
     DashboardComponent,
     HeaderComponent,
-    WidgetComponent
+    WidgetComponent,
+    ElementComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

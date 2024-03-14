@@ -1,5 +1,6 @@
 <div class="widget border border-secondary border-opacity-75 m-1 bg-dark bg-opacity-75">
-  <div class="container d-flex align-items-center">
-    <h3 *ngIf="titleIsVisible" class="text-light mb-0 fw-bold">{{ widgetName }}</h3>
+  <div class="container align-items-center">
+    <h3 *ngIf="widgetService.titleEnabled" class="text-light mb-0 fw-bold">{{ widgetService.title }}</h3>
+    <app-element *ngFor="let element of widgetService.widgetElements"/>
   </div>
 </div>
