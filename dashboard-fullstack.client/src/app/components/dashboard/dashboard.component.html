@@ -1,8 +1,12 @@
-<app-header [organizationName]="orgName" [dashboardName]="dashName"></app-header>
+<div *ngIf="dashboard">
+    <app-header [organizationName]="dashboard.organization" [dashboardName]="dashboard.name"></app-header>
 
-<div class="container-fluid">
-  <div class="row me-0">
-    <app-widget *ngFor="let position of positions"
-                class="{{ position }} p-1" />
-  </div>
+    <div class="container-fluid">
+        <div class="row me-0">
+            <app-widget *ngFor="let widget of dashboard.widgets"
+                        class="{{ widget.position }} p-1"
+                        [title]="widget.name"
+                        [elements]="widget.elements"/>
+        </div>
+    </div>
 </div>

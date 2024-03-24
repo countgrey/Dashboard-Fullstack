@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
-import { DashboardWidgetService } from '../../../services/dashboard/widget/widget.service';
+import { Component, Input, OnInit} from '@angular/core';
 import { WidgetElement } from '../../../models/dashboard-widget/widget-element.model';
 
 
@@ -10,14 +9,12 @@ import { WidgetElement } from '../../../models/dashboard-widget/widget-element.m
 })
 export class WidgetComponent implements OnInit {
 
-  constructor(public widgetService: DashboardWidgetService) { }
+  @Input() title: string = "Generic widget";
+  @Input() elements!: WidgetElement[];
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.widgetService.setPosition("col-lg-4 col-md-6 col-sm-12 mb-4");
-    //this.widgetService.setChartElements([]);
-    this.widgetService.setTitle("Generic widget");
-    this.widgetService.enableTitle(true);
-
-    
+    console.log(this.elements[0].data);
   }
 }

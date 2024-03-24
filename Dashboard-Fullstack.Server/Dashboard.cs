@@ -21,7 +21,7 @@
         public int Id { get; set; }
         public bool Private { get; set; }
         public ElementType ElementType { get; set; }
-        public string[] Data { get; set; }
+        public Data Data { get; set; }
     }
 
     public enum ElementType
@@ -35,5 +35,12 @@
         Checkbox,
         Radio,
         CustomHTML
+    }
+
+    public class Data
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Dictionary<string, int> Values { get; set; }
     }
 }

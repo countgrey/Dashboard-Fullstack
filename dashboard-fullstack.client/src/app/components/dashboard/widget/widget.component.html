@@ -1,6 +1,7 @@
 <div class="widget fg m-1">
   <div class="container align-items-center">
-    <h3 *ngIf="widgetService.titleEnabled" class="text-light mb-0 fw-bold">{{ widgetService.title }}</h3>
-    <app-element *ngFor="let element of widgetService.widgetElements"/>
+    <h3 *ngIf="title" class="fw-bold">{{ title }}</h3>
+    <app-element *ngFor="let element of elements"
+                 [data]="element.data"/>
   </div>
 </div>

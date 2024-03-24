@@ -1,9 +1,23 @@
+import { Data } from '../data.model';
 import { ChartData } from './chart.model';
 import { KpiData } from './kpi.model';
 import { TableData } from './table.model';
 
 export interface WidgetElement {
-  height: number; //В процентах
-  type: string; // kpi, table, chart
-  data?: any;
+  id: number;
+  isPrivate: boolean;
+  elemType: ElementType;
+  data: Data;
+}
+
+export enum ElementType {
+  None,
+  Text,
+  Chart,
+  Table,
+  Image,
+  Dropdown,
+  Checkbox,
+  Radio,
+  CustomHTML
 }
