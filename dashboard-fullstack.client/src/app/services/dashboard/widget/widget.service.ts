@@ -10,7 +10,7 @@ export class DashboardWidgetService {
   widgetElement: WidgetElement = {
       type: 'kpi',
       data: {},
-      height: 0
+      height: 20
   };
 
   public position: string = "col-lg-4 col-md-6 col-sm-12 mb-4";

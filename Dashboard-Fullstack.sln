@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard-Fullstack.Server", "Dashboard-Fullstack.Server\Dashboard-Fullstack.Server.csproj", "{F02C3843-B479-443A-A90D-6CD87D0AE0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dashboard-Fullstack.Server", "Dashboard-Fullstack.Server\Dashboard-Fullstack.Server.csproj", "{F02C3843-B479-443A-A90D-6CD87D0AE0FB}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dashboard-fullstack.client", "dashboard-fullstack.client\dashboard-fullstack.client.esproj", "{8970526F-CA9E-4604-B195-7973C4267388}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{F02C3843-B479-443A-A90D-6CD87D0AE0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F02C3843-B479-443A-A90D-6CD87D0AE0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F02C3843-B479-443A-A90D-6CD87D0AE0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8970526F-CA9E-4604-B195-7973C4267388}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

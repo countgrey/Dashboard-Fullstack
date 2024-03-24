@@ -1,7 +1,24 @@
 .widget {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 10px;
-    height: 390px;
-    width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  height: 41vh;
+  width: 100%;
+  border: 1px solid black;
+  transition: transform 0.3s;
+}
+
+@media (min-height: 501px) {
+  .widget {
+    height: 41vh;
+  }
+}
+
+@media (max-height: 600px) {
+  .widget {
+    height: 80vh;
+  }
+}
+
+.widget :hover {
+  transform: scale(1.05);
 }

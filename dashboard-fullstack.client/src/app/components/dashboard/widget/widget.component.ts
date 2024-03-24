@@ -14,7 +14,7 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit(): void {
     this.widgetService.setPosition("col-lg-4 col-md-6 col-sm-12 mb-4");
-    this.widgetService.setChartElements([]);
+    //this.widgetService.setChartElements([]);
     this.widgetService.setTitle("Generic widget");
     this.widgetService.enableTitle(true);
 

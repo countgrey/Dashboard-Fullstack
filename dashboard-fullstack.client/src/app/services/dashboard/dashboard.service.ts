@@ -1,4 +1,15 @@
-export class WidgetModel {
-  public widgetName: string = "Generic widget";
-  public widgetSize: string = "col-lg-4 col-md-6 col-sm-12 mb-4";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DashboardService {
+
+  constructor(private http: HttpClient) { }
+
+  getData(url: string): Observable<any> {
+    return this.http.get(url);
+  }
 }
