@@ -34,13 +34,25 @@
         Dropdown,
         Checkbox,
         Radio,
-        CustomHTML
+        CustomHTML,
+        Kpi
     }
 
     public class Data
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Dictionary<string, int> Values { get; set; }
+        public string TextValue { get; set; }
+        public int Value { get; set; }
+        public string[] Headers { get; set; }
+        public string[][] Rows { get; set; }
+        public string[] Labels { get; set; }
+        public ISeries[] Series { get; set; }
+    }
+
+    public interface ISeries
+    {
+        public string Type { get; set; }
+        public string Data { get; set; }
     }
 }

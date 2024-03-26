@@ -1,0 +1,20 @@
+<app-header [dashboardName]="'Кабинеты'" [organizationName]="''"></app-header>
+
+<mat-tab-group>
+    <mat-tab label="Floor 1">
+        <div class="classroom-map">
+            <div *ngFor="let classroom of classrooms" class="classroom" [style.left.px]="classroom.x" [style.top.px]="classroom.y"
+                 [style.width.px]="calculateWidth(classroom)" [style.height.px]="calculateHeight(classroom)"
+                 [matTooltip]="getClassroomInfo(classroom)"
+                 [@fadeInOut]
+                 [@hover]="isHovered ? 'in' : 'out'">
+                {{ classroom.name }}
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Floor 2">
+        <!-- Аналогичное содержимое для второго этажа -->
+    </mat-tab>
+    <!-- Добавьте другие вкладки для других этажей при необходимости -->
+</mat-tab-group>
+

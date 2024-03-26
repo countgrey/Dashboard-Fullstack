@@ -1,0 +1,41 @@
+.classroom-map {
+  position: relative;
+  width: 500px; /* Размеры карты можно задать как требуется */
+  height: 500px;
+}
+
+.classroom {
+  position: absolute;
+  width: 50px; /* Размер квадратиков кабинетов */
+  height: 50px;
+  background-color: #ccc; /* Цвет квадратиков кабинетов */
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* Стили для вкладок */
+.mat-tab-labels {
+  background-color: #f0f0f0; /* Цвет фона вкладок */
+}
+
+.mat-tab-label {
+  min-width: 120px; /* Минимальная ширина вкладки */
+  color: #333; /* Цвет текста вкладки */
+}
+
+  .mat-tab-label:hover {
+    background-color: #ddd; /* Цвет фона при наведении на вкладку */
+  }
+
+.mat-tab-label-active {
+  background-color: #007bff; /* Цвет фона активной вкладки */
+  color: white; /* Цвет текста активной вкладки */
+}
+
+.mat-ink-bar {
+  background-color: #007bff; /* Цвет подсветки активной вкладки */
+}

@@ -1,10 +1,15 @@
 export interface Data {
   id: number;
   name: string;
-  values: dataValues[];
+  value: number;
+  tvalue: string;
+  headers: string[];
+  rows: string[][];
+  labels: string[];
+  series: Series[];
 }
 
-interface dataValues {
-  name: string;
-  value: number;
+interface Series {
+  type: string;
+  data: number[];
 }

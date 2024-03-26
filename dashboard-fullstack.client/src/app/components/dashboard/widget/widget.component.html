@@ -2,6 +2,7 @@
   <div class="container align-items-center">
     <h3 *ngIf="title" class="fw-bold">{{ title }}</h3>
     <app-element *ngFor="let element of elements"
-                 [data]="element.data"/>
+                 [data]="element.data"
+                 [type]="element.elemType"/>
   </div>
 </div>

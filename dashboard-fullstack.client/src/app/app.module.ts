@@ -11,6 +11,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WidgetComponent } from './components/dashboard/widget/widget.component';
 import { ElementComponent } from './components/dashboard/widget/element/element.component';
+import * as HighchartsMore from 'highcharts/highcharts-more';
+import * as HighchartsExporting from 'highcharts/modules/exporting';
+import * as Highcharts from 'highcharts';
+import { ClassroomMapComponent } from './components/classroom-map/classroom-map.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -21,13 +31,16 @@ import { ElementComponent } from './components/dashboard/widget/element/element.
     DashboardComponent,
     HeaderComponent,
     WidgetComponent,
-    ElementComponent
+    ElementComponent,
+    ClassroomMapComponent,
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, MatTooltipModule, MatTabsModule, BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

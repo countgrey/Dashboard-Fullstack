@@ -11,10 +11,10 @@ export class WidgetComponent implements OnInit {
 
   @Input() title: string = "Generic widget";
   @Input() elements!: WidgetElement[];
+  
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.elements[0].data);
   }
 }

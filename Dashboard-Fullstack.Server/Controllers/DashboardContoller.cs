@@ -29,14 +29,24 @@ namespace Dashboard_Fullstack.Server.Controllers
                             {
                                 Id = 1,
                                 Private = false,
-                                ElementType = ElementType.Text,
+                                ElementType = ElementType.Kpi,
                                 Data = new Data
                                 {
                                     Id = 1,
                                     Name = "Some data",
-                                    Values = new Dictionary<string, int> {{ "apple", 10 },
-                                                                          { "banana", 20 },
-                                                                          { "orange", 30 }}
+                                    Value = 100
+                                }
+                            },
+                            new Element
+                            {
+                                Id = 1,
+                                Private = false,
+                                ElementType = ElementType.Kpi,
+                                Data = new Data
+                                {
+                                    Id = 1,
+                                    Name = "Apples",
+                                    Value = 24
                                 }
                             }}
                     },
@@ -55,10 +65,8 @@ namespace Dashboard_Fullstack.Server.Controllers
                                 Data = new Data
                                 {
                                     Id = 2,
-                                    Name = "Some data",
-                                    Values = new Dictionary<string, int> {{ "apple", 10 },
-                                                                          { "banana", 20 },
-                                                                          { "orange", 30 }}
+                                    Name = "Another data",
+                                    TextValue =  "Some string value"
                                 }
                             }}
                     }

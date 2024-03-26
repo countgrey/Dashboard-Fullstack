@@ -1,1 +1,6 @@
-<h4 *ngIf="data">{{ data.name }}</h4>
+<div *ngIf="data">
+    <div class="d-flex justify-content-between">
+        <h4>{{ data.name }}: </h4>
+        <h4>{{ data.value }}</h4>
+    </div>
+</div>

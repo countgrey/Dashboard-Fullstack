@@ -19,5 +19,6 @@ export enum ElementType {
   Dropdown,
   Checkbox,
   Radio,
-  CustomHTML
+  CustomHTML,
+  Kpi
 }
