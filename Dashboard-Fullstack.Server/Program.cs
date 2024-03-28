@@ -1,3 +1,6 @@
+using AngularAuthAPI.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -9,6 +12,11 @@ builder.Services.AddCors(options =>
         builder => builder.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader());
+});
+
+builder.Services.AddDbContext<AppDBContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr"));
 });
 
 var app = builder.Build();
