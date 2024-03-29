@@ -19,6 +19,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -36,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule, MatTooltipModule, MatTabsModule, BrowserAnimationsModule
+    AppRoutingModule, MatTooltipModule, MatTabsModule, BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideAnimationsAsync()
