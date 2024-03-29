@@ -14,10 +14,11 @@ builder.Services.AddCors(options =>
                           .AllowAnyHeader());
 });
 
-builder.Services.AddDbContext<AppDBContext>(option =>
+builder.Services.AddDbContext<AppDBContext>(options =>
 {
-    option.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnStr"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("Data Source=database.db"));
 });
+
 
 var app = builder.Build();
 

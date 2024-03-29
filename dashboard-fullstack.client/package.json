@@ -27,6 +27,8 @@
     "jest-editor-support": "*",
     "run-script-os": "*",
     "rxjs": "~7.8.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
