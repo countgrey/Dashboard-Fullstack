@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dashboard_Fullstack.Server.Models;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace Dashboard_Fullstack.Server.Controllers
@@ -13,38 +14,38 @@ namespace Dashboard_Fullstack.Server.Controllers
         {
             return new Dashboard
             {
-                Id = 0,
+                Id = 23412,
                 Name = "Loaded Dash",
                 Organization = "CoolLLC",
                 Widgets = new Widget[]
                 {
                     new Widget
                     {
-                        Id = 1,
+                        Id = 3214,
                         Name = "Loaded Widget",
                         Position = "col-lg-4 col-md-6 col-sm-12",
                         Elements = new Element[]
                         {
                             new Element
                             {
-                                Id = 1,
+                                Id = 7676,
                                 Private = false,
                                 ElementType = ElementType.Kpi,
                                 Data = new Data
                                 {
-                                    Id = 1,
+                                    Id = 8383,
                                     Name = "Some data",
                                     Value = 100
                                 }
                             },
                             new Element
                             {
-                                Id = 1,
+                                Id = 6546,
                                 Private = false,
-                                ElementType = ElementType.Kpi,
+                                ElementType = ElementType.Spline,
                                 Data = new Data
                                 {
-                                    Id = 1,
+                                    Id = 15435,
                                     Name = "Apples",
                                     Value = 24
                                 }
@@ -52,23 +53,46 @@ namespace Dashboard_Fullstack.Server.Controllers
                     },
                     new Widget
                     {
-                        Id = 2,
+                        Id = 54279,
                         Name = "Another Loaded Widget",
                         Position = "col-lg-8 col-md-12 col-sm-12",
                         Elements = new Element[]
                         {
                             new Element
                             {
-                                Id = 2,
-                                Private = false,
-                                ElementType = ElementType.Text,
+                                Id = 9056,
+                                ElementType = ElementType.Bar,
                                 Data = new Data
                                 {
-                                    Id = 2,
+                                    Id = 1354353,
                                     Name = "Another data",
-                                    TextValue =  "Some string value"
+                                    TextValue = "Some string value"
                                 }
-                            }}
+                            },
+                            new Element
+                            {
+                                Id = 90561,
+                                ElementType = ElementType.Kpi,
+                                Data = new Data
+                                {
+                                    Id = 135212323,
+                                    Name = "Anotherd data",
+                                    Value = 5
+                                }
+                            },
+                            new Element
+                            {
+                                Id = 903561,
+                                ElementType = ElementType.Kpi,
+                                Data = new Data
+                                {
+                                    Id = 135212323,
+                                    Name = "Anotherddd data",
+                                    Value = 6
+                                }
+                            }},
+
+
                     }
                 }
             };

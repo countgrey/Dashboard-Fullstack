@@ -1,6 +1,37 @@
 <div *ngIf="data">
-    <div class="d-flex justify-content-between">
+
+    <div *ngIf="this.type == ElementType.Text">
+        <h4>{{ data.tvalue }}</h4>
+    </div>
+
+
+
+    <div *ngIf="this.type == ElementType.Kpi" class="d-flex justify-content-between">
         <h4>{{ data.name }}: </h4>
         <h4>{{ data.value }}</h4>
     </div>
+
+
+
+    <div *ngIf="[ElementType.Line,
+                 ElementType.Spline,
+                 ElementType.Area,
+                 ElementType.AreaSpline,
+                 ElementType.Column,
+                 ElementType.Bar,
+                 ElementType.Pie,
+                 ElementType.Scatter,
+                 ElementType.Bubble,
+                 ElementType.WindRose,
+                 ElementType.BoxPlot].includes(this.type)" #chartContainer id="{{ this.id }}">
+    </div>
+
+
+
+
+    <div *ngIf="this.type == ElementType.Image">
+        <img [src]="data.tvalue">
+    </div>
+
+
 </div>

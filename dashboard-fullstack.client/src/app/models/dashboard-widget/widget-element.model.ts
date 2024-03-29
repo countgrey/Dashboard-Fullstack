@@ -6,14 +6,25 @@ import { TableData } from './table.model';
 export interface WidgetElement {
   id: number;
   isPrivate: boolean;
-  elemType: ElementType;
+  elementType: ElementType;
   data: Data;
+
 }
 
 export enum ElementType {
   None,
   Text,
-  Chart,
+  Line,
+  Spline,
+  Area,
+  AreaSpline,
+  Column,
+  Bar,
+  Pie,
+  Scatter,
+  Bubble,
+  WindRose,
+  BoxPlot,
   Table,
   Image,
   Dropdown,

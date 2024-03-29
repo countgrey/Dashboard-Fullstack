@@ -3,6 +3,7 @@
     <h3 *ngIf="title" class="fw-bold">{{ title }}</h3>
     <app-element *ngFor="let element of elements"
                  [data]="element.data"
-                 [type]="element.elemType"/>
+                 [type]="element.elementType"
+                 [id]="element.id"/>
   </div>
 </div>

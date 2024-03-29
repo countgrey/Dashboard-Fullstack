@@ -19,7 +19,9 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getData(url).subscribe((data: Dashboard) => {
 
       this.dashboard = data;
+      console.log(data.widgets[1].elements[0]);
       console.log(data)
+      console.log(data.widgets[0].elements[0].elementType);
     });
 }
 }
