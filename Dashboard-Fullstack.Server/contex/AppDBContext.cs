@@ -5,16 +5,17 @@ namespace AngularAuthAPI.Context
 {
     public class AppDBContext : DbContext
     {
-        public AppDBContext(DbContextOptions<AppDBContext> options):base(options)
-        {
-
-        }
+        public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
+        public string DbPath { get;}
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public AppDBContext()
         {
-            modelBuilder.Entity<User>().ToTable("users");
+            DbPath = "database.db";
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlite($"Data Source={DbPath}");
     }
 }

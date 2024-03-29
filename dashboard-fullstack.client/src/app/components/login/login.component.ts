@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from "@angular/router"
+import sqlite3 from 'sqlite3'
+import { open } from 'sqlite'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -19,11 +23,12 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit(): void{
+   onSubmit(): void{
     if(this.loginForm.valid)
     {
-        //Авторизация прошла 
-        console.log(this.loginForm.value);
+        //Авторизация прошла
+        //this.router.navigate(['/dashboard']);
+
     }
     else
     {
