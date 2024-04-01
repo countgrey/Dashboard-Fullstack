@@ -1,0 +1,7 @@
+.widget {
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s; /* Плавное изменение при наведении и изменение тени */
+}
+
+  .widget:hover {
+    transform: scale(1.05); /* Увеличиваем масштаб при наведении на 5% */
+  }

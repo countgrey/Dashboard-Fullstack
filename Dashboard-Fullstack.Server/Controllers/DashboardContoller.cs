@@ -1,14 +1,12 @@
 ﻿using Dashboard_Fullstack.Server.Models;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace Dashboard_Fullstack.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class DashboardController : ControllerBase
     {
-
         [HttpGet]
         public Dashboard Get()
         {
@@ -49,7 +47,8 @@ namespace Dashboard_Fullstack.Server.Controllers
                                     Name = "Apples",
                                     Value = 24
                                 }
-                            }}
+                            }
+                        }
                     },
                     new Widget
                     {
@@ -90,9 +89,28 @@ namespace Dashboard_Fullstack.Server.Controllers
                                     Name = "Anotherddd data",
                                     Value = 6
                                 }
-                            }},
-
-
+                            }
+                        }
+                    },
+                    new Widget
+                    {
+                        Id = 12345,
+                        Name = "New Empty Widget",
+                        Position = "col-lg-6 col-md-12 col-sm-12",
+                        Elements = new Element[] 
+                        {
+                         new Element
+                            {
+                                Id = 903534,
+                                ElementType = ElementType.Bar,
+                                Data = new Data
+                                {
+                                    Id = 1352455,
+                                    Name = "Anotherddd data",
+                                    Value = 10
+                                }
+                            }
+                        }
                     }
                 }
             };
