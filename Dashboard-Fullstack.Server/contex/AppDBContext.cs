@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using AngularAuthAPI.Models;
+using Dashboard_Fullstack.Server.Models;
 
 namespace AngularAuthAPI.Context
 {
@@ -8,14 +9,14 @@ namespace AngularAuthAPI.Context
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options) { }
 
         public DbSet<User> Users { get; set; }
-        public string DbPath { get;}
-
-        public AppDBContext()
-        {
-            DbPath = "database.db";
-        }
+        public DbSet<Dashboard> Dashboards { get; set; }
+        public DbSet<Widget> Widgets { get; set; }
+        public DbSet<Element> Elements { get; set; }
+        public DbSet<Data> Datas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath}");
+        {
+            options.UseSqlServer("Server=localhost;Database=DashboardData;Trusted_Connection=True;TrustServerCertificate=true;");
+        }
     }
 }

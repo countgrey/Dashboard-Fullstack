@@ -1,18 +1,20 @@
-﻿namespace Dashboard_Fullstack.Server.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Dashboard_Fullstack.Server.Models;
 
 public class Dashboard
 {
     public required string Name { get; set; }
     public required string Organization { get; set; }
     public required int Id { get; set; }
-    public Widget[]? Widgets { get; set; }
+    public ICollection<Widget> Widgets { get; set; }
 }
 
 public class Widget
 {
     public required string Name { get; set; }
     public required string Position { get; set; }
-    public Element[]? Elements { get; set; }
+    public ICollection<Element> Elements { get; set; }
     public required int Id { get; set; }
 }
 
@@ -55,27 +57,34 @@ public class Data
     public string? TextValue { get; set; }
     public int? Value { get; set; }
     public string[]? Headers { get; set; }
-    public string[][]? Rows { get; set; }
+    public ICollection<Row> Rows { get; set; }
     public string[]? Labels { get; set; }
-    public IDataSeries[]? Series { get; set; }
+    public DataSeries[]? Series { get; set; }
 }
 
-public interface IChart
+public class Row
+{
+    public int Id { get; set; }
+    public string[] Values { get; set; }
+}
+
+public class Chart
 {
     public string Type { get; set; }
     public string Title { get; set; }
     public string Subtitle { get; set; }
     public string[] Categories { get; set; }
-    public IChartOptions? Options { get; set; }
+    public ChartOptions? Options { get; set; }
 }
 
-public interface IDataSeries
+public class DataSeries
 {
+    public int Id { get; set; }
     public string Name { get; set; }
     public double[] Data { get; set; }
 }
 
-public interface IChartOptions
+public class ChartOptions
 {
     public IAxisOptions XAxis { get; set; }
     public IAxisOptions YAxis { get; set; }

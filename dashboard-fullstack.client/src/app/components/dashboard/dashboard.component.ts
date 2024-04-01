@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard/dashboard.service';
 import { Dashboard } from '../../models/dashboard.model';
 import { Router } from "@angular/router"
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
 
 @Component({
   selector: 'app-dashboard',

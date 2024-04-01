@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from "@angular/router"
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
