@@ -4,7 +4,8 @@
   height: 41vh;
   width: 100%;
   border: 1px solid black;
-  transition: transform 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень карточки */
+  /* transition: transform 3s;*/
 }
 
 @media (min-height: 501px) {
@@ -19,6 +20,6 @@
   }
 }
 
-.widget :hover {
-  transform: scale(1.05);
+.widget:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Изменяем цвет тени при наведении на карточку */
 }

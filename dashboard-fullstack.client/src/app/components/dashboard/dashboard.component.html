@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row me-0">
             <app-widget *ngFor="let widget of dashboard.widgets"
-                        class="{{ widget.position }} p-1"
+                        class="widget {{ widget.position }} p-1"
                         [title]="widget.name"
                         [elements]="widget.elements"/>
         </div>
