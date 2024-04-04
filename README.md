@@ -4,3 +4,5 @@
 Запустить devstart.bat
 
 Запуск сервера: Через IIS или Docker
+
+Еще MS SQL Server нужон ;>
