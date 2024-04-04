@@ -1,18 +1,20 @@
-﻿namespace Dashboard_Fullstack.Server.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Dashboard_Fullstack.Server.Models;
 
 public class Dashboard
 {
     public required string Name { get; set; }
     public required string Organization { get; set; }
     public required int Id { get; set; }
-    public Widget[]? Widgets { get; set; }
+    public ICollection<Widget> Widgets { get; set; }
 }
 
 public class Widget
 {
     public required string Name { get; set; }
     public required string Position { get; set; }
-    public Element[]? Elements { get; set; }
+    public ICollection<Element> Elements { get; set; }
     public required int Id { get; set; }
 }
 
@@ -53,30 +55,30 @@ public class Data
     public required int Id { get; set; }
     public string? Name { get; set; }
     public string? TextValue { get; set; }
-    public int? Value { get; set; }
+    public decimal? Value { get; set; }
     public string[]? Headers { get; set; }
-    public string[][]? Rows { get; set; }
+    public ICollection<Row> Rows { get; set; }
     public string[]? Labels { get; set; }
-    public IDataSeries[]? Series { get; set; }
+    public ICollection<DataSeries>? Series { get; set; }
+    public ChartOptions? Options { get; set; }
 }
 
-public interface IChart
+public class Row
 {
-    public string Type { get; set; }
-    public string Title { get; set; }
-    public string Subtitle { get; set; }
-    public string[] Categories { get; set; }
-    public IChartOptions? Options { get; set; }
+    public int Id { get; set; }
+    public string[] Values { get; set; }
 }
 
-public interface IDataSeries
+public class DataSeries
 {
+    public int Id { get; set; }
     public string Name { get; set; }
     public double[] Data { get; set; }
 }
 
-public interface IChartOptions
+public class ChartOptions
 {
+    public int Id { get; set; }
     public IAxisOptions XAxis { get; set; }
     public IAxisOptions YAxis { get; set; }
     public ITitleOptions Title { get; set; }
@@ -86,12 +88,12 @@ public interface IChartOptions
     public ITooltipOptions Tooltip { get; set; }
     public IInteractionOptions Interaction { get; set; }
     public IStyleOptions Style { get; set; }
-    public IAnimationOptions Animation { get; set; }
     public ISeriesOptions Series { get; set; }
 }
 
-public interface IAxisOptions
+public class IAxisOptions
 {
+    public int Id { get; set; }
     public string Title { get; set; }
     public string[] Categories { get; set; }
     public bool? Reversed { get; set; }
@@ -106,8 +108,9 @@ public interface IAxisOptions
     public IPlotLine[] PlotLines { get; set; }
 }
 
-public interface IPlotLine
+public class IPlotLine
 {
+    public int Id { get; set; }
     public string Color { get; set; }
     public double? Value { get; set; }
     public string DashStyle { get; set; }
@@ -115,8 +118,9 @@ public interface IPlotLine
     public string LabelText { get; set; }
 }
 
-public interface ITitleOptions
+public class ITitleOptions
 {
+    public int Id { get; set; }
     public string Text { get; set; }
     public bool? Align { get; set; }
     public string Style { get; set; }
@@ -125,8 +129,9 @@ public interface ITitleOptions
     public double? WidthAdjust { get; set; }
 }
 
-public interface ISubtitleOptions
+public class ISubtitleOptions
 {
+    public int Id { get; set; }
     public string Text { get; set; }
     public bool? Align { get; set; }
     public string Style { get; set; }
@@ -135,8 +140,9 @@ public interface ISubtitleOptions
     public double? WidthAdjust { get; set; }
 }
 
-public interface ILegendOptions
+public class ILegendOptions
 {
+    public int Id { get; set; }
     public bool? Enabled { get; set; }
     public string Layout { get; set; }
     public string Align { get; set; }
@@ -152,20 +158,23 @@ public interface ILegendOptions
     public string SymbolHeight { get; set; }
 }
 
-public interface INavigationOptions
+public class INavigationOptions
 {
+    public int Id { get; set; }
     public bool? Enabled { get; set; }
     public IButtonOptions ButtonOptions { get; set; }
 }
 
-public interface IButtonOptions
+public class IButtonOptions
 {
+    public int Id { get; set; }
     public bool? Enabled { get; set; }
     public string Theme { get; set; }
 }
 
-public interface ITooltipOptions
+public class ITooltipOptions
 {
+    public int Id { get; set; }
     public string HeaderFormat { get; set; }
     public string PointFormat { get; set; }
     public string FooterFormat { get; set; }
@@ -179,8 +188,9 @@ public interface ITooltipOptions
     public string Style { get; set; }
 }
 
-public interface IInteractionOptions
+public class IInteractionOptions
 {
+    public int Id { get; set; }
     public bool? ZoomType { get; set; }
     public bool? Pan { get; set; }
     public bool? Selection { get; set; }
@@ -188,8 +198,9 @@ public interface IInteractionOptions
     public bool? Trackball { get; set; }
 }
 
-public interface IStyleOptions
+public class IStyleOptions
 {
+    public int Id { get; set; }
     public string Color { get; set; }
     public string FontFamily { get; set; }
     public string FontWeight { get; set; }
@@ -200,15 +211,10 @@ public interface IStyleOptions
     public double? BorderWidth { get; set; }
 }
 
-public interface IAnimationOptions
-{
-    public bool? Enabled { get; set; }
-    public int? Duration { get; set; }
-    public string Easing { get; set; }
-}
 
-public interface ISeriesOptions
+public class ISeriesOptions
 {
+    public int Id { get; set; }
     public bool? Visible { get; set; }
     public string Color { get; set; }
     public string DashStyle { get; set; }

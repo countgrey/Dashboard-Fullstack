@@ -7,32 +7,25 @@ import HC_exporting from 'highcharts/modules/exporting';
 @Component({
   selector: 'app-element',
   templateUrl: './element.component.html',
-  styleUrl: './element.component.css'
+  styleUrls: ['./element.component.css']
 })
-
-
-
 export class ElementComponent implements AfterViewInit {
   ElementType = ElementType;
 
   @ViewChild('chartContainer', { static: false }) chartContainer!: ElementRef;
   @Input() data!: Data;
-  @Input() type!: ElementType
+  @Input() type!: ElementType;
   @Input() isPrivate: boolean = false;
   @Input() id!: number;
 
   ngAfterViewInit(): void {
-
     console.log(this.chartContainer.nativeElement.id);
-    console.log(this.id);
+    console.log('ID', this.id);
     if (this.id == this.chartContainer.nativeElement.id) {
-      // Импортируем необходимые модули Highcharts
       HC_exporting(Highcharts);
 
-
-
-      const seriesOptions: Highcharts.SeriesSplineOptions = {
-        type: 'spline', // указываем тип серии
+      let seriesOptions: Highcharts.SeriesOptionsType = {
+        type: 'spline',
         name: 'Данные не определены',
         data: [1, 2, 5, 4, 5],
         borderWidth: 0
@@ -40,8 +33,8 @@ export class ElementComponent implements AfterViewInit {
 
       switch (this.type) {
         case ElementType.Line:
-          const seriesOptions: Highcharts.SeriesLineOptions = {
-            type: 'line', // указываем тип серии
+          seriesOptions = {
+            type: 'line',
             name: 'Данные не определены',
             data: [1, 2, 5, 4, 5],
             borderWidth: 0
@@ -50,55 +43,69 @@ export class ElementComponent implements AfterViewInit {
         case ElementType.Spline:
           break;
         case ElementType.Area:
+          // Добавьте соответствующие настройки для Area
           break;
         case ElementType.AreaSpline:
+          // Добавьте соответствующие настройки для AreaSpline
           break;
         case ElementType.Column:
+          seriesOptions = {
+            type: 'column',
+            name: 'Данные не определены',
+            data: [1, 2, 5, 4, 5],
+            borderWidth: 0
+          };
           break;
         case ElementType.Bar:
+          seriesOptions = {
+            type: 'bar',
+            name: 'Данные не определены',
+            data: [1, 2, 5, 4, 10],
+            borderWidth: 0
+          };
           break;
         case ElementType.Pie:
+          // Добавьте соответствующие настройки для Pie
           break;
         case ElementType.Scatter:
+          // Добавьте соответствующие настройки для Scatter
           break;
         case ElementType.Bubble:
+          // Добавьте соответствующие настройки для Bubble
           break;
         case ElementType.WindRose:
+          // Добавьте соответствующие настройки для WindRose
           break;
         case ElementType.BoxPlot:
+          // Добавьте соответствующие настройки для BoxPlot
           break;
+        default:
+          console.error(`Неизвестный тип элемента: ${this.type}`);
+          return;
       }
 
-      
-
-
-
-
-
-
-      // Создаем объект настроек для графика
       const chartOptions: Highcharts.Options = {
         chart: {
           type: 'column',
-          backgroundColor: 'rgba(255, 255, 255, 0)', // прозрачный фон
-          height: 150 // ограничиваем высоту графика
+          backgroundColor: 'rgba(255, 255, 255, 0)',
+          height: 150
         },
         credits: {
-          enabled: false // отключаем кредиты
+          enabled: false
         },
         title: {
           text: ''
         },
         legend: {
-          enabled: false // убираем легенду
+          enabled: false
         },
         xAxis: {
           categories: ['A', 'B', 'C', 'D', 'E'],
           gridLineWidth: 0,
           labels: {
             style: {
-              textOutline: '0px', // убираем обводку для подписей по оси X
-              color: '#ffffff' // делаем шрифт белым для подписей по оси X
+              textOutline: '0px',
+              color: '#ffffff'
             }
           }
         },
@@ -106,42 +113,27 @@ export class ElementComponent implements AfterViewInit {
           title: {
             text: '',
             style: {
-              color: '#ffffff', // делаем шрифт белым для подписей по оси X
-              textOutline: '0px' // убираем обводку для заголовка оси Y
+              color: '#ffffff',
+              textOutline: '0px'
             }
           },
           gridLineWidth: 0,
           labels: {
             style: {
-              color: '#ffffff' // делаем шрифт белым для подписей по оси Y
+              color: '#ffffff'
             }
           }
         },
-        series: [
-          seriesOptions
-        ]
+        series: [seriesOptions]
       };
-
-
-
 
       const chartElement = this.chartContainer.nativeElement;
 
-
-
-
-
-      // Проверяем, что элемент существует
       if (chartElement.id == this.id) {
-        // Создаем компонент графика
         Highcharts.chart(chartElement, chartOptions);
       } else {
         console.error(`Элемент с идентификатором ${this.id} не найден.`);
       }
     }
-   
   }
-
-  @ViewChild('chartElem', { static: false }) myElementRef!: ElementRef;
-  
 }

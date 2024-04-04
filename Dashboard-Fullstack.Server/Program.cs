@@ -16,9 +16,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<AppDBContext>(options =>
 {
-    options.UseSqlite(builder.Configuration.GetConnectionString("Data Source=database.db"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 
 var app = builder.Build();
 
